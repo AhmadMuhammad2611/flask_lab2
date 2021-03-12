@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block body %}
+
+<script>
+  function alrt() {
+    alert("You are going to delete !");
+  }
+</script>
+
+<ul>
+  {% for movie in movies %}
+  <li>
+    <h2 style="color: #00f">Title: {{ movie["title"] }}</h2>
+    <!-- <h3>Director is: {{ movie["director"] }}</h3> -->
+    <h3>Description is: {{ movie["description"] }}</h3>
+    <h3>year is: {{ movie["year"] }}</h3>
+
+    <a
+      type="button"
+      class="btn btn-danger"
+      href="/movie/delete/{{movie.id}}"
+      onclick="alrt()"
+      >delete</a
+    >
+
+    <!-- <h3>Genres: {{ ", ".join(movie["genres"]) }}</h3> -->
+  </li>
+  <hr />
+  {% endfor %}
+</ul>
+{% endblock %}

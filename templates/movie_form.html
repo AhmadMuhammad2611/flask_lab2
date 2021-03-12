@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="POST" action="/movie/add">
+
+    {{ form.hidden_tag() }}
+
+    {{ form.title.label }}
+    {{ form.title() }}
+    <br>
+
+    {{ form.description.label }}
+    {{ form.description() }}
+    <br>
+
+    {{ form.year.label }}
+    {{ form.year() }}
+    <br>
+
+    {{ form.genres.label }}
+    {{ form.genres() }}
+    <br>
+    {{ form.submit() }}
+
+</form>
+{% endblock %}
